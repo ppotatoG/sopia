@@ -1,3 +1,5 @@
+//test
+
 window.onscroll = function() {headerFunction()};
 
 let header = document.querySelector("header"),
@@ -61,8 +63,6 @@ function click(e){
         })
     }
 }
-
-
 
 Array.from(document.querySelectorAll(".ripple")).forEach(a => {
     a.addEventListener("click", function (e) {
