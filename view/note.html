@@ -7,128 +7,60 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
 </head>
 <body>
     <div id="wrap">
-        <header class="header">
-            <div class="header-wrap">
-                <h1 class="logo">SOPIA</h1>
-                <ul>
-                    <li class="js-menu"><a href="#" class="ripple mobile-btn" data-color="bfd9fe">사용방법</a></li>
-                    <li><a href="#" class="ripple mobile-btn">패치노트</a></li>
-                </ul>
-            </div>
-            <div class="menu-wrap">
-                <div class="menu">
-                    <h2 class="logo">SOPIA</h2>
-                    <ul>
-                        <li class="on">
-                            <a class="ripple mobile-btn">빠른 시작 안내</a>
-                            <ul class="gnb-wrap">
-                                <li><a class="ripple mobile-btn">어떻게 시리얼 넘버를 발급하나요?</a></li>
-                                <li><a class="ripple mobile-btn">설치하기</a></li>
-                                <li><a class="ripple mobile-btn">간편 매니저</a></li>
-                                <li><a class="ripple mobile-btn">Spoor Chat 사용</a></li>
+        <header id="header">
+            <h1 class="logo" onclick="location.href='./index.html'">SOPIA</h1>
+            <ul class="menu">
+                <li><a class="ripple" href="./note.html">패치노트</a></li>
+                <li>
+                    <a class="ripple" onclick="headerView()">사용방법</a>
+                    <ul class="gnb">
+                        <li>
+                            <button type="submit" class="on">빠른 시작 안내</button>
+                            <ul class="depth">
+                                <li class="depth-list"><a href="" class="ripple">어떻게 시리얼 넘버를 발급하나요?</a></li>
+                                <li class="depth-list"><a href="" class="ripple">설치하기</a></li>
+                                <li class="depth-list"><a href="" class="ripple">간편 매니저</a></li>
+                                <li class="depth-list"><a href="" class="ripple">Spoor Chat 사용</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="ripple mobile-btn">프로그램 메뉴 안내</a>
-                            <ul class="gnb-wrap">
-                                <li><a class="ripple mobile-btn">HOME</a></li>
-                                <li><a class="ripple mobile-btn">EZ CED</a></li>
-                                <li><a class="ripple mobile-btn">CODE</a></li>
-                                <li><a class="ripple mobile-btn">SPOOR CHAT</a></li>
-                                <li><a class="ripple mobile-btn">SETTING</a></li>
-                                <li><a class="ripple mobile-btn">BUNDLE</a></li>
+                            <button type="submit">빠른 시작 안내</button>
+                            <ul class="depth">
+                                <li class="depth-list"><a href="" class="ripple">어떻게 시리얼 넘버를 발급하나요?</a></li>
+                                <li class="depth-list"><a href="" class="ripple">설치하기</a></li>
+                                <li class="depth-list"><a href="" class="ripple">간편 매니저</a></li>
+                                <li class="depth-list"><a href="" class="ripple">Spoor Chat 사용</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="ripple mobile-btn">번들 안내</a>
-                            <ul class="gnb-wrap">
-                                <li><a class="ripple mobile-btn">OnOff</a></li>
-                                <li><a class="ripple mobile-btn">반복</a></li>
-                                <li><a class="ripple mobile-btn">시그니처</a></li>
-                                <li><a class="ripple mobile-btn">투표</a></li>
-                                <li><a class="ripple mobile-btn">현재곡</a></li>
-                                <li><a class="ripple mobile-btn">미니게임</a></li>
-                                <li><a class="ripple mobile-btn">쉬운 명령어 추가</a></li>
+                            <button type="submit">빠른 시작 안내</button>
+                            <ul class="depth">
+                                <li class="depth-list"><a href="" class="ripple">어떻게 시리얼 넘버를 발급하나요?</a></li>
+                                <li class="depth-list"><a href="" class="ripple">설치하기</a></li>
+                                <li class="depth-list"><a href="" class="ripple">간편 매니저</a></li>
+                                <li class="depth-list"><a href="" class="ripple">Spoor Chat 사용</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a class="ripple mobile-btn">API 가이드</a>
-                            <ul class="gnb-wrap">
-                                <li><a class="ripple mobile-btn">시작하기</a></li>
-                                <li><a class="ripple mobile-btn">Sopia 객체</a></li>
-                                <li><a class="ripple mobile-btn">var 객체</a></li>
-                                <li><a class="ripple mobile-btn">Config 객체</a></li>
-                                <li><a class="ripple mobile-btn">Itv 객체</a></li>
-                                <li><a class="ripple mobile-btn">스크립트 삽입</a></li>
+                            <button type="submit">빠른 시작 안내</button>
+                            <ul class="depth">
+                                <li class="depth-list"><a href="" class="ripple">어떻게 시리얼 넘버를 발급하나요?</a></li>
+                                <li class="depth-list"><a href="" class="ripple">설치하기</a></li>
+                                <li class="depth-list"><a href="" class="ripple">간편 매니저</a></li>
+                                <li class="depth-list"><a href="" class="ripple">Spoor Chat 사용</a></li>
                             </ul>
                         </li>
                     </ul>
-                    <a class="hide-btn">o</a>
-                </div>
-            </div>
-            
-            <div class="pc-header">
-                <h1 class="logo">SOPIA</h1>
-                <ul>
-                    <li><a class="ripple page-select">패치노트</a></li>
-                    <li>
-                        <a class="ripple">사용방법</a>
-                        <ul class="depth">
-                            <li class="on">
-                                <a class="ripple fill-btn">빠른 시작 안내</a>
-                                <ul class="gnb-wrap">
-                                    <li><a class="ripple border-btn">시리얼 넘버 발급</a></li>
-                                    <li><a class="ripple border-btn">설치하기</a></li>
-                                    <li><a class="ripple border-btn">간편 매니저</a></li>
-                                    <li><a class="ripple border-btn">Spoor Chat 사용</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="ripple fill-btn">프로그램 메뉴 안내</a>
-                                <ul class="gnb-wrap">
-                                    <li><a class="ripple border-btn">HOME</a></li>
-                                    <li><a class="ripple border-btn">EZ CED</a></li>
-                                    <li><a class="ripple border-btn">CODE</a></li>
-                                    <li><a class="ripple border-btn">SPOOR CHAT</a></li>
-                                    <li><a class="ripple border-btn">SETTING</a></li>
-                                    <li><a class="ripple border-btn">BUNDLE</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="ripple fill-btn">번들 안내</a>
-                                <ul class="gnb-wrap">
-                                    <li><a class="ripple border-btn">OnOff</a></li>
-                                    <li><a class="ripple border-btn">반복</a></li>
-                                    <li><a class="ripple border-btn">시그니처</a></li>
-                                    <li><a class="ripple border-btn">투표</a></li>
-                                    <li><a class="ripple border-btn">현재곡</a></li>
-                                    <li><a class="ripple border-btn">미니게임</a></li>
-                                    <li><a class="ripple border-btn">쉬운 명령어 추가</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a class="ripple fill-btn">API 가이드</a>
-                                <ul class="gnb-wrap">
-                                    <li><a class="ripple border-btn">시작하기</a></li>
-                                    <li><a class="ripple border-btn">Sopia 객체</a></li>
-                                    <li><a class="ripple border-btn">var 객체</a></li>
-                                    <li><a class="ripple border-btn">Config 객체</a></li>
-                                    <li><a class="ripple border-btn">Itv 객체</a></li>
-                                    <li><a class="ripple border-btn">스크립트 삽입</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
+                </li>
+            </ul>
+            <button class="menu-hide" onclick="window.location.reload()"></button>
         </header>
+
         <div class="contents note">
 
             <div class="note-wrap">

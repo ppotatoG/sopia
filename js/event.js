@@ -10,94 +10,60 @@ function headerFunction() {
     header.classList.remove("fix");
     }
 }
-
-let figure=document.querySelectorAll('figure'),
-    PopWrap=document.querySelector('.popup');
-
-for(let i=0; i<figure.length; i++){
-    figure[i].addEventListener('click', function(){
-        
-        let ThisSrc=this.querySelector('img').src,
-            ThisAlt=this.querySelector('img').alt;
-
-        PopWrap.classList.add('on')
-
-        if(PopWrap.classList.contains('on')){
-            PopWrap.querySelector('img').src=ThisSrc
-            PopWrap.querySelector('img').alt=ThisAlt
-
-            PopWrap.addEventListener('click', function(){
-                this.classList.remove('on')
-            })
-        }
-
-    })
-}
-
-let GnbBtn=document.querySelectorAll('header .menu-wrap .menu >ul >li >a'),
-    GnbBox=document.querySelector('header .menu-wrap');
-
-for(let i=0; i<GnbBtn.length; i++){
-    GnbBtn[i].addEventListener('click', function(){
-        if(this.parentNode.classList=='on'){
-            this.parentNode.classList.remove('on')
-        }else if(this.parentNode.classList!=='on'){
-            for(let j=0; j<GnbBtn.length; j++){
-                GnbBtn[j].parentNode.classList.remove('on')
-            }
-            this.parentNode.classList.add('on')
-        }
-    })
-}
-
-document.querySelector('header .js-menu').addEventListener('click', function(){
-    GnbBox.classList.add('on')
-})
-
-document.querySelector('header .hide-btn').addEventListener('click', function(){
-    GnbBox.classList.remove('on')
-})
-
-let DepthBtn=document.querySelectorAll('header .pc-header .depth >li >a');
+let DepthBtn=document.querySelectorAll('header button:not(.menu-hide)');
 
 for(let i=0; i<DepthBtn.length; i++){
-    DepthBtn[i].addEventListener('click', function(){
+    DepthBtn[i].addEventListener('click', function(e){
         console.log(this)
-        if(this.parentNode.classList=='on'){
-            this.parentNode.classList.remove('on')
-        }else if(this.parentNode.classList!=='on'){
-            for(let j=0; j<GnbBtn.length; j++){
-                DepthBtn[j].parentNode.classList.remove('on')
+        if(this.classList=='on'){
+            this.classList.remove('on')
+        }else if(this.classList!=='on'){
+            for(let j=0; j<DepthBtn.length; j++){
+                DepthBtn[j].classList.remove('on')
             }
-            this.parentNode.classList.add('on')
+            this.classList.add('on')
         }
     })
 }
-let NoteList=document.querySelectorAll('.note-box h3');
-for(let i=0; i<NoteList.length; i++){
-    NoteList[i].addEventListener('click', function(){
-        this.classList.toggle('on')
-    })
+let Header=document.querySelector('header');
+let Menu=document.querySelector('header .menu')
+function headerView(){
+    console.log("viewBtn")
+    Header.classList.add('on')
+    Menu.style.display="block";
+    Menu.style.marginTop="-8rem";
+    Menu.style.transition="margin "+"1s";
+    setTimeout(function(){
+        console.log("viewDelayBtn")
+        Menu.style.marginTop="0";
+        Menu.style.visibility="visible";
+    }, 90);
 }
-let viewBtn=document.querySelectorAll('.view span'),
-    NoteBox=document.querySelector('.note-box');
+// let figure=document.querySelectorAll('figure')
+let Figure = document.querySelectorAll('figure:not(.disable)'), 
+    PopWrap=document.querySelector('.popup');
 
-for(let i=0; i<viewBtn.length; i++){
-    viewBtn[i].addEventListener('click', function(){
-        viewBtn[0].classList.remove('on')
-        viewBtn[1].classList.remove('on')
-        this.classList.add('on')
-        if(viewBtn[0].classList=='on') {
-            NoteBox.style.flexDirection='column'
-        }else if(viewBtn[0].classList!=='on') {
-            NoteBox.style.flexDirection='column-reverse'
-            document.querySelector('.note-box .box:last-child').style.marginTop='0'
-            // document.querySelector('.note-box .box:first-child').style.marginTop='3rem'
-        }
-    })
+[].forEach.call(Figure,function(col){ 
+    col.addEventListener("click",click,false); 
+}); 
+function click(e){
+    let ThisSrc=this.querySelector('img').src,
+            ThisAlt=this.querySelector('img').alt;
+
+    PopWrap.classList.add('on')
+
+    if(PopWrap.classList.contains('on')){
+        PopWrap.querySelector('img').src=ThisSrc
+        PopWrap.querySelector('img').alt=ThisAlt
+
+        PopWrap.addEventListener('click', function(){
+            this.classList.remove('on')
+        })
+    }
 }
 
-// ripple
+
+
 Array.from(document.querySelectorAll(".ripple")).forEach(a => {
     a.addEventListener("click", function (e) {
         const ripple = document.createElement("div"),
