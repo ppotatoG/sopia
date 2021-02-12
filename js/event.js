@@ -1,5 +1,3 @@
-//test
-
 window.onscroll = function() {headerFunction()};
 
 let header = document.querySelector("header"),
@@ -13,10 +11,9 @@ function headerFunction() {
     }
 }
 let DepthBtn=document.querySelectorAll('header button:not(.menu-hide)');
-
 for(let i=0; i<DepthBtn.length; i++){
-    DepthBtn[i].addEventListener('click', function(e){
-        console.log(this)
+    DepthBtn[i].addEventListener('click', function(){
+        
         if(this.classList=='on'){
             this.classList.remove('on')
         }else if(this.classList!=='on'){
@@ -27,10 +24,10 @@ for(let i=0; i<DepthBtn.length; i++){
         }
     })
 }
-let Header=document.querySelector('header');
-let Menu=document.querySelector('header .menu')
+
+let Header=document.querySelector('header'),
+    Menu=document.querySelector('header .menu');
 function headerView(){
-    console.log("viewBtn")
     Header.classList.add('on')
     Menu.style.display="block";
     Menu.style.marginTop="-8rem";
@@ -41,7 +38,7 @@ function headerView(){
         Menu.style.visibility="visible";
     }, 90);
 }
-// let figure=document.querySelectorAll('figure')
+
 let Figure = document.querySelectorAll('figure:not(.disable)'), 
     PopWrap=document.querySelector('.popup');
 
