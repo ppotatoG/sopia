@@ -47,7 +47,7 @@ let Figure = document.querySelectorAll('figure:not(.disable)'),
 }); 
 function click(e){
     let ThisSrc=this.querySelector('img').src,
-            ThisAlt=this.querySelector('img').alt;
+        ThisAlt=this.querySelector('img').alt;
 
     PopWrap.classList.add('on')
 
