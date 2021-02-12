@@ -1,3 +1,6 @@
+let once={once: true};
+    // once={once: true};
+
 window.onscroll = function() {headerFunction()};
 
 let header = document.querySelector("header"),
@@ -10,6 +13,7 @@ function headerFunction() {
     header.classList.remove("fix");
     }
 }
+
 let DepthBtn=document.querySelectorAll('header button:not(.menu-hide)');
 for(let i=0; i<DepthBtn.length; i++){
     DepthBtn[i].addEventListener('click', function(){
@@ -25,19 +29,41 @@ for(let i=0; i<DepthBtn.length; i++){
     })
 }
 
-let Header=document.querySelector('header'),
-    Menu=document.querySelector('header .menu');
-function headerView(){
-    Header.classList.add('on')
-    Menu.style.display="block";
-    Menu.style.marginTop="-8rem";
-    Menu.style.transition="margin "+"1s";
-    setTimeout(function(){
-        console.log("viewDelayBtn")
-        Menu.style.marginTop="0";
-        Menu.style.visibility="visible";
-    }, 90);
-}
+let Menu=document.querySelector('header .menu'),
+    MoblieMenuBtn=document.querySelector('.open-menu');
+
+window.addEventListener('load', function(){
+    let Width=window.innerWidth;
+    if(Width<1024) {
+        MoblieMenuBtn.addEventListener('click', function(){
+            header.classList.add('on')
+            Menu.style.display="block";
+            Menu.style.marginTop="-8rem";
+            Menu.style.transition="margin "+"1s";
+            setTimeout(function(){
+                Menu.style.marginTop="0";
+                Menu.style.visibility="visible";
+            }, 90);  
+        }, once)
+    }
+})
+
+window.addEventListener('resize', function(){
+    let Width=window.innerWidth;
+    if(Width<1024) {
+        MoblieMenuBtn.addEventListener('click', function(){
+            header.classList.add('on')
+            Menu.style.display="block";
+            Menu.style.marginTop="-8rem";
+            Menu.style.transition="margin "+"1s";
+            setTimeout(function(){
+                Menu.style.marginTop="0";
+                Menu.style.visibility="visible";
+            }, 90);
+        })
+    }
+})
+
 
 let Figure = document.querySelectorAll('figure:not(.disable)'), 
     PopWrap=document.querySelector('.popup');

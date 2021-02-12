@@ -19,9 +19,10 @@ header{
     padding: 1rem 2rem; box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1); 
     display: flex; align-items: center; justify-content: space-between;
     position: relative;}
-header .menu{display: flex;}
+header .menu{display: flex; padding-top: 1rem;}
 header .menu >li:last-child{margin-left: 2rem;}
-header .gnb{display: none;}
+header .menu >li >a{padding: .5rem;}
+header .gnb{display: none; margin-left: 2rem;}
 header .menu-hide{
     position: absolute; top: 2rem; right: 2rem; display: none;
     width: 2rem; height: 2rem; background: tomato;}
@@ -30,28 +31,47 @@ header.on{
     position: fixed; top: 0; left: 0; z-index: 1;
     box-shadow: none; display: block; height: 100vh; min-height: 570px;}
 header.on .menu{
-    display: block; padding: 2rem; padding-top: 0; 
-    visibility: hidden; margin-top: -5rem; display: block;}
+    display: block; visibility: hidden; margin-top: -5rem; display: block;}
 header.on .menu >li:last-child{margin-left: 0rem;}
-header.on .menu >li >a{font-size: 1.8rem; font-weight: 400; padding: 1rem 0;}
+header.on .menu >li >a{font-size: 1.8rem; font-weight: 400; padding: 1rem; margin-left: 1rem;}
 
-header .gnb{padding-left: 1rem;}
 header .gnb >li{min-height: 50px;}
 header.on .gnb{display: block;}
 header .gnb button{
-    position: relative; padding: 1rem; padding-left: 0; width: 100%; 
-    text-align: left; min-height: 50px; font-size: 1.4rem;}
-header .gnb button::before{
+    position: relative; padding: 1rem; width: 100%; 
+    text-align: left; min-height: 50px; font-size: 1.6rem;}
+header .gnb button::after{
     content:""; display: block; width: 8px; height: 8px; border: 2px #df89b5 solid;
     transform: rotate(45deg); position: absolute; top: 22px; right: 20px; 
     border-right: none; border-bottom: none; transition: transform .2s;}
-header .gnb button.on::before{
+header .gnb button.on::after{
     transform: rotate(225deg); top: 18px;}
 header .gnb button.on+.depth{height: auto; padding: 1rem; padding-top: 0; margin: 0;}
 header .gnb button.on+.depth >*{visibility: visible;}
 header .depth{padding: 0; height: 0; margin-top: -2rem; transition: margin .2s;}
 header .depth >*{visibility: hidden;}
 header .depth a{padding: 1rem; font-size: 1.4rem;}
+
+.menu >li >a::before{
+    width: 100%; height: 100%; position: absolute; bottom: 0; left: 0;
+    display: block; content:""; opacity: 0; transition: opacity .2s;
+    background: linear-gradient(to left, #df89b5 0%, #bfd9fe 100%);}
+.menu >li >a:hover::before{opacity: .2;}
+.menu >li >a:active::before{opacity: .2;}
+
+header .gnb button::before{
+    width: 100%; height: 100%; position: absolute; bottom: 0; left: 0;
+    display: block; content:""; opacity: 0; transition: opacity .2s;
+    background: linear-gradient(to left, #df89b5 0%, #bfd9fe 100%);}
+header.on .gnb button:hover::before{opacity: .2;}
+header.on .gnb button:active::before{opacity: .2;}
+
+header .depth a::before{
+    width: 100%; height: 100%; position: absolute; bottom: 0; left: 0;
+    display: block; content:""; opacity: 0; transition: opacity .2s;
+    background: linear-gradient(to left, #df89b5 0%, #bfd9fe 100%);}
+header.on .depth a:hover::before{opacity: .2;}
+header.on .depth a:active::before{opacity: .2;}
 
 header.on .menu-hide{display: block;}
 
@@ -170,6 +190,10 @@ footer p{text-align: center; color: #fff; font-size: 1.4rem; padding: 4rem 0;}
 .note .go-btn:hover{box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);}
 .note .go-btn:active{box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);}
 .note .go-btn i{font-size: 1.4rem; color: rgb(63, 63, 63)}
+.popup figure{
+    width: 80%; max-width: 550px; 
+    display: flex; justify-content: center; align-items: center;}
+
 
 @keyframes materialRipple {
     0% {
@@ -195,20 +219,8 @@ footer p{text-align: center; color: #fff; font-size: 1.4rem; padding: 4rem 0;}
     animation: materialRipple 0.4s linear
 }
 
-.pc-header{display: none;}
-
-@media all and (max-width:1023px){
-    
-}
-
-@media all and (min-width:480px) and (max-width:768px) {
-    .popup figure{
-        width: 80%; max-width: 550px; 
-        display: flex; justify-content: center; align-items: center;}
-}
 @media all and (min-width:767px) and (max-width:1024px) {
-    .popup figure{
-        width: 55%; display: flex; justify-content: center; align-items: center;}
+    .popup figure{width: 70%;}
 }
 @media all and (min-width:1024px){
     html{font-size: 12px;}
@@ -218,10 +230,21 @@ footer p{text-align: center; color: #fff; font-size: 1.4rem; padding: 4rem 0;}
         position: fixed; top: 0; left: 0; padding: 3rem;
         display: block;}
     header .menu{display: block;}
-    header .menu >li{padding: 1rem 0 0;}
     header .menu >li:last-child{margin: 0;}
 
     header .gnb{display: block;}
+    header .menu >li >a{padding: 1rem;}
+    .menu >li >a::before{transition: width .2s; width: 0;}
+    .menu >li >a:hover::before{width: 100%;}
+    .menu >li >a:active::before{width: 100%;}
+
+    header .gnb button::before{transition: width .2s; width: 0;}
+    header .gnb button:hover::before{width: 100%; opacity: .2;}
+    header .gnb button:active::before{width: 100%; opacity: .2;}
+
+    header .depth a::before{height: 0.2rem; transition: width .2s; width: 0;}
+    header .depth a:hover::before{width: 100%; opacity: .4;}
+    header .depth a:active::before{width: 100%; opacity: .4;}
     
     header.fix+.contents{padding: 60px 0;}
     .header.fix+.contents{padding-top: 60px}
