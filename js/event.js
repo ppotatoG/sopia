@@ -87,6 +87,33 @@ function click(e){
     }
 }
 
+
+let NoteList=document.querySelectorAll('.note-box h3');
+for(let i=0; i<NoteList.length; i++){
+    NoteList[i].addEventListener('click', function(){
+        this.classList.toggle('on')
+    })
+}
+let viewBtn=document.querySelectorAll('.view span'),
+    NoteBox=document.querySelector('.note-box');
+
+for(let i=0; i<viewBtn.length; i++){
+    viewBtn[i].addEventListener('click', function(){
+        viewBtn[0].classList.remove('on')
+        viewBtn[1].classList.remove('on')
+        this.classList.add('on')
+        if(viewBtn[0].classList=='on') {
+            NoteBox.style.flexDirection='column'
+            document.querySelector('.note-box .box:first-child').style.marginTop='0'
+            document.querySelector('.note-box .box:last-child').style.marginTop='3rem'
+        }else if(viewBtn[0].classList!=='on') {
+            NoteBox.style.flexDirection='column-reverse'
+            document.querySelector('.note-box .box:last-child').style.marginTop='0'
+            document.querySelector('.note-box .box:first-child').style.marginTop='3rem'
+        }
+    })
+}
+
 Array.from(document.querySelectorAll(".ripple")).forEach(a => {
     a.addEventListener("click", function (e) {
         const ripple = document.createElement("div"),

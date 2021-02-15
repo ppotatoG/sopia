@@ -298,7 +298,7 @@ footer p{text-align: center; color: #fff; font-size: 1.4rem; padding: 4rem 0;}
     .flex-wrap >section:nth-child(even) >div {flex-direction: row;}
     .flex-wrap >section:nth-child(odd) >div >*:first-child{margin: 0; margin-left: 8rem;}
     .flex-wrap >section:nth-child(even) >div >*:first-child{margin: 0; margin-right: 8rem;}
-    .flex-wrap figure{width: 40%; max-width: 600px;}
+    .flex-wrap figure{width: 50%; max-width: 600px;}
 
     .popup figure{width: 40%;}
 }
