@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZ CMD</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1 class="logo ripple" onclick="location.href='../index.html'">SOPIA</h1>
+            <ul class="menu">
+                <li><a class="ripple" href="../note.html">패치노트</a></li>
+                <li>
+                    <a class="ripple open-menu">사용방법</a>
+                    <ul class="gnb">
+                        <li>
+                            <button type="submit">빠른 시작 안내</button>
+                            <ul class="depth">
+                                <li><a href="../quick start/serial.html" class="ripple">어떻게 시리얼 넘버 발급</a></li>
+                                <li><a href="../quick start/install.html" class="ripple">설치하기</a></li>
+                                <li><a href="../quick start/menager.html" class="ripple">간편 매니저</a></li>
+                                <li><a href="../quick start/spoor-chat-use.html" class="ripple">Spoor Chat 사용</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <button type="submit" class="on">프로그램 메뉴 안내</button>
+                            <ul class="depth">
+                                <li><a href="../menu guide/home.html" class="ripple padge-select">HOME</a></li>
+                                <li><a href="../menu guide/ez-cmd.html" class="ripple">EZ CED</a></li>
+                                <li><a href="../menu guide/code.html" class="ripple">CODE</a></li>
+                                <li><a href="../menu guide/spoor-chat.html" class="ripple">SPOOR CHAT</a></li>
+                                <li><a href="../menu guide/setting.html" class="ripple">SETTING</a></li>
+                                <li><a href="../menu guide/bundle.html" class="ripple">BUNDLE</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <button type="submit">번들 안내</button>
+                            <ul class="depth">
+                                <li><a href="./onoff.html" class="ripple">On Off</a></li>
+                                <li><a href="./repeat.html" class="ripple">반복</a></li>
+                                <li><a href="./signature.html" class="ripple">시그니처</a></li>
+                                <li><a href="./request.html" class="ripple">신청곡</a></li>
+                                <li><a href="./vote.html" class="ripple">투표</a></li>
+                                <li><a href="./current-song.html" class="ripple">현재곡</a></li>
+                                <li><a href="./mini-game.html" class="ripple">미니게임</a></li>
+                                <li><a href="./add-commend.html" class="ripple">쉬운 명령어 추가</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <button type="submit">API 가이드</button>
+                            <ul class="depth">
+                                <li><a href="../API guide/start.html" class="ripple">시작하기</a></li>
+                                <li><a href="../API guide/object-sopia.html" class="ripple">Sopia객체</a></li>
+                                <li><a href="../API guide/object-var.html" class="ripple">Var 객체</a></li>
+                                <li><a href="../API guide/object-config.html" class="ripple">Config객체</a></li>
+                                <li><a href="../API guide/object-itv.html" class="ripple">Itv 객체</a></li>
+                                <li><a href="../API guide/script.html" class="ripple">스크립트 삽임</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="menu-hide" onclick="window.location.reload()"></button>
+        </header>
+        <div class="contents">
+
+            <div class="docs-wrap">
+                <div class="docs-header">
+                    <div>
+                        <h2>쉬운 명령어 추가</h2>
+                        <p>이걸 준비하게 될 줄은 몰랐어</p>
+                    </div>
+                </div>
+                <div class="docs-box">
+                    <p class="memo">소피아 <span class="remark">1.7.0</span> 버전부터 기본 제공 합니다.</p>
+                    <p class="memo">해당 기능은 <a href="#" class="link">CODE</a> 탭의 <span class="remark">storages</span> 폴더 안 파일을 공유합니다.</p>
+                    <p class="memo">해당 번들과 동시에 <a href="#" class="link">OnOff</a> 번들을 사용중이라면, 소피아에 오동작이 일어날 수 있습니다.</p>
+                    
+                    <div class="list-box">
+                        <ul>
+                            <li>
+                                <figure class="ripple" data-color="222">
+                                    <img src="../../images/choice.gif" alt="">
+                                    <figcaption>입장 & 하트에 대한 반응을 쉽게 설정할 수 있습니다.<br>
+                                        설명에 존재하듯, 예약어 목록을 그대로 사용하면 정보가 변경되어 출력됩니다</figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure class="ripple" data-color="222">
+                                    <img src="../../images/choice.gif" alt="">
+                                    <figcaption>스푼을 선물받았을 때에 반응을 쉽게 설정할 수 있습니다.<br>
+                                        설명에 존재하듯, 예약어 목록을 그대로 사용하면 정보가 변경되어 출력됩니다.<br><br>
+                                        <span class="remark">추가</span> 버튼을 누르면 빈 아이템이 생성됩니다.</figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure class="ripple" data-color="222">
+                                    <img src="../../images/choice.gif" alt="">
+                                    <figcaption><span class="remark">스티커</span> 버튼을 누르면 반응할 스푼 스티커를 선택할 수 있습니다.<br><br>
+                                        <span class="remark">기본</span> 의 값은, 설정되지 않은 스티커에 대해 반응합니다.</figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure class="ripple" data-color="222">
+                                    <img src="../../images/choice.gif" alt="">
+                                    <figcaption>일정한 문장을 답변하는 명령어를 쉽게 등록합니다.<br>
+                                        설명에 존재하듯, 예약어 목록을 그대로 사용하면 정보가 변경되어 출력됩니다.<br>
+                                        <span class="remark">\n</span> 문자를 추가하여 개행을 삽입할 수 있습니다.<br>
+                                        왼쪽에는 반응할 문장을 추가합니다. 띄어쓰기는 올 수 없습니다. 위 사진으로 예를 들면 <span class="remark">!AA</span> 명령어는 <span class="remark">aaa</span> 란 문장을 답변합니다.</figcaption>
+                                </figure>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="important"><b>모든 설정은 아래 적용 버튼을 눌러야 적용됩니다.</b></p>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="popup">
+            <figure class="style-none ripple" data-color="222"><img src="" alt=""></figure>
+        </div>
+
+        <footer class="footer">
+            <p>2021 - 개발자 윤군</p>
+        </footer>
+    </div>
+
+    <script src="../../js/event.js"></script>
+</body>
+</html>
