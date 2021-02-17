@@ -1,10 +1,10 @@
 let once={once: true};
-    // once={once: true};
 
 window.onscroll = function() {headerFunction()};
 
 let header = document.querySelector("header"),
     sticky = header.offsetTop;
+
 
 function headerFunction() {
     if (window.pageYOffset > sticky) {

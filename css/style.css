@@ -3,8 +3,6 @@ html{font-size: 10px;}
 a, span, p, button, label, h1, h2, h3, h4, h5, h6, figcaption, li{
     color: #323232; font-size: 1.6rem; font-weight: 300; 
     font-family: 'Noto Sans KR', 'Roboto', sans-serif; letter-spacing: -.05rem;}
-a, span, button, img{display: block;}
-button, input{outline: none; border: none;}
 
 #wrap figure{padding: 2rem;}
 figure:not(.disable) img{
@@ -168,14 +166,14 @@ footer p{text-align: center; color: #fff; font-size: 1.4rem; padding: 4rem 0;}
 .docs-box .code{
     display: inline-block; background: #e8f1ff; 
     font-size: 1.4rem; color: #df89b5; padding: .5rem;}
-.docs-box .box{border-bottom: 1px solid #eee;}
-.docs-box .box:first-child{margin: 0;}
-.docs-box .box:last-child{border-bottom: none;}
-.docs-box .box >*{margin-top: 4rem; padding: 5rem 0;}
-.docs-box .box >*:first-child{margin-top: 0rem;}
-.docs-box .box ul li{margin-top: 4rem;}
-.docs-box .box ul p{margin-top: 2rem;}
-.docs-box .box ul li:first-child{margin-top: 0rem;}
+.docs-box .list-box{border-bottom: 1px solid #eee; margin-top: 0;}
+.docs-box .list-box:last-child{border-bottom: none;}
+.docs-box .list-box >*{margin-top: 4rem; padding: 5rem 0;}
+.docs-box .list-box >*:first-child{margin-top: 0rem;}
+.docs-box .list-box ul li{margin-top: 4rem;}
+.docs-box .list-box ul p{margin-top: 2rem;}
+.docs-box .list-box ul li:first-child{margin-top: 0rem;}
+.docs-box .link{color: darkcyan;}
 
 .note-wrap{margin-top: 4rem;}
 .note-wrap .view{display: none;}
@@ -203,8 +201,9 @@ footer p{text-align: center; color: #fff; font-size: 1.4rem; padding: 4rem 0;}
 .note .go-btn:active{box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);}
 .note .go-btn i{font-size: 1.4rem; color: rgb(63, 63, 63)}
 .popup figure{
-    width: 80%; max-width: 550px; 
+    width: 80%; max-width: 550px;
     display: flex; justify-content: center; align-items: center;}
+.popup figure img{background: #fff;}
 
 
 @keyframes materialRipple {
@@ -265,7 +264,6 @@ footer p{text-align: center; color: #fff; font-size: 1.4rem; padding: 4rem 0;}
         width: calc(100% - 320px);
         position: fixed; top: 0; left: 320px; z-index: 1;}
 
-    .header.fix+.contents{padding-top: 140px;}
     #wrap .contents{padding-left: 320px;}
 
     .lost-num div div{width: 40%; margin: 60px auto 0; height: 100%;}
