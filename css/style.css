@@ -172,12 +172,12 @@ footer ul li:first-child a{margin-right: 3rem;}
 .docs-box h3{font-size: 2.4rem; font-weight: 500;}
 .docs-box figure{width: 80%; margin: 2rem auto 4rem;}
 .docs-box figcaption{margin: 2rem auto; text-align: center; font-size: 1.6rem;}
-.docs-box .code{
-    display: inline-block; background: #df89b5; 
-    font-size: 1.4rem; color: #e8f1ff; padding: .5rem;}
-.docs-box .remark{
+.docs-box .emphasis01{
     display: inline-block; background: #e8f1ff; 
     font-size: 1.4rem; color: #df89b5; padding: .5rem;}
+.docs-box .emphasis02{
+    display: inline-block; background: #fff3f9; 
+    font-size: 1.4rem; color: #86a4d4; padding: .5rem;}
 .docs-box .link{color: darkcyan; display: inline-block;}
 .docs-box .important{color: rgb(179, 0, 0); font-size: 1rem}
 .docs-box .badge{
