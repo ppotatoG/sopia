@@ -209,7 +209,7 @@ footer ul li:first-child a{margin-right: 3rem;}
 .note .go-btn:hover{box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);}
 .note .go-btn:active{box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);}
 .note .go-btn i{font-size: 1.4rem; color: rgb(63, 63, 63)}
-.popup figure{width: 80%; display: flex; justify-content: center; align-items: center;}
+.popup figure{width: 80%; display: flex; justify-content: center; align-items: center; z-index: 2;}
 .popup figure img{background: #fff;}
 
 

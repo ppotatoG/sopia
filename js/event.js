@@ -1,4 +1,5 @@
 let once={once: true};
+let capture={capture: true};
 
 window.onscroll = function() {headerFunction()};
 
@@ -67,26 +68,76 @@ window.addEventListener('resize', function(){
 
 let Figure = document.querySelectorAll('figure:not(.disable)'), 
     PopWrap=document.querySelector('.popup');
-
-[].forEach.call(Figure,function(col){ 
-    col.addEventListener("click",click,false); 
-}); 
-function click(e){
-    let ThisSrc=this.querySelector('img').src,
+/*
+for(let i=0; i<Figure.length; i++){
+    Figure[i].addEventListener('click', function(){
+        let ThisSrc=this.querySelector('img').src,
         ThisAlt=this.querySelector('img').alt;
 
-    PopWrap.classList.add('on')
+        PopWrap.classList.add('on')
 
-    if(PopWrap.classList.contains('on')){
-        PopWrap.querySelector('img').src=ThisSrc
-        PopWrap.querySelector('img').alt=ThisAlt
+        if(PopWrap.classList.contains('on')){
+            PopWrap.querySelector('img').src=ThisSrc
+            PopWrap.querySelector('img').alt=ThisAlt
 
-        PopWrap.addEventListener('click', function(){
-            this.classList.remove('on')
-        })
-    }
+            PopWrap.addEventListener('click', function(){
+                this.classList.remove('on')
+            })
+        }
+    })
 }
+*/
+/*
+Figure.forEach(function(currentNode){
+    currentNode.addEventListener('click', function(){
+        let ThisSrc=this.querySelector('img').src,
+        ThisAlt=this.querySelector('img').alt;
 
+        PopWrap.classList.add('on')
+
+        if(PopWrap.classList.contains('on')){
+            PopWrap.querySelector('img').src=ThisSrc
+            PopWrap.querySelector('img').alt=ThisAlt
+
+            PopWrap.addEventListener('click', function(){
+                this.classList.remove('on')
+            })
+        }
+    })
+})
+*/
+// Figure.forEach(function(currentNode){
+//     currentNode.addEventListener('click', function(){
+//         const imgNode=this.querySelector('img');
+        
+//         PopWrap.classList.add('on')
+
+//         if(PopWrap.classList.contains('on')){
+//             PopWrap.querySelector('img').src=imgNode.src
+//             PopWrap.querySelector('img').alt=imgNode.alt
+//         }
+//     })
+// })
+
+//외않되
+
+document.querySelector("#wrap").addEventListener('click', function(event){
+    const imgNode=event.target;//#wrap 안에서 누른 target
+    const isViewer=imgNode.dataset.hasOwnProperty("viewer")//클릭한 타겟의 데이터속성에 뷰어가 있는지 판단
+    if(isViewer){
+        PopWrap.classList.add('on')
+        PopWrap.querySelector('img').src=imgNode.src
+        PopWrap.querySelector('img').alt=imgNode.alt
+    }
+})
+
+PopWrap.addEventListener('click', function(e){
+    // const isImg=e.target.tagName==="IMG"
+    if(e.target.tagName!=="IMG"){ //isImg
+        this.classList.remove('on')
+    }
+   // this.classList.remove('on')
+})
 
 let NoteList=document.querySelectorAll('.note-box h3');
 for(let i=0; i<NoteList.length; i++){
@@ -94,6 +145,11 @@ for(let i=0; i<NoteList.length; i++){
         this.classList.toggle('on')
     })
 }
+
+// document.querySelector('#wrap').addEventListener('click', function(e){
+//     console.dir(e.target)
+// })
+
 let viewBtn=document.querySelectorAll('.view span'),
     NoteBox=document.querySelector('.note-box');
 
