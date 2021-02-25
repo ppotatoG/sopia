@@ -25,9 +25,9 @@ header .menu >li >a{padding: .5rem;}
 header .gnb{display: none; margin-left: 2rem;}
 header .menu-hide{
     position: absolute; top: 2rem; right: 2rem; display: none;
-    width: 2rem; height: 2rem; background: tomato;}
+    width: 2rem; height: 2rem;}
 header .menu-hide span{
-    margin-left: -2px;
+    position: absolute; top: 10px; right: -2px;
     width: 120%; height: 2px; background: #323232;}
 header .menu-hide span:first-child{transform: rotate(45deg)}
 header .menu-hide span:last-child{transform: rotate(-45deg)}
