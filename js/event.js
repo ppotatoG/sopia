@@ -1,4 +1,5 @@
-let once={once: true};
+let once={once: true},
+    Wrap=document.querySelector("#wrap")
 
 window.onscroll = function() {headerFunction()};
 
@@ -68,23 +69,14 @@ window.addEventListener('resize', function(){
 let Figure = document.querySelectorAll('figure:not(.disable)'), 
     PopWrap=document.querySelector('.popup');
 
-for(let i=0; i<Figure.length; i++){
-    Figure[i].addEventListener('click', function(){
-        let ThisSrc=this.querySelector('img').src,
-        ThisAlt=this.querySelector('img').alt;
-
+Wrap.addEventListener('click', function(event){
+    const imgNode=event.target; 
+    if(imgNode.dataset.hasOwnProperty("viewer")){
         PopWrap.classList.add('on')
-
-        if(PopWrap.classList.contains('on')){
-            PopWrap.querySelector('img').src=ThisSrc
-            PopWrap.querySelector('img').alt=ThisAlt
-
-            PopWrap.addEventListener('click', function(){
-                this.classList.remove('on')
-            })
-        }
-    })
-}
+        PopWrap.querySelector('img').src=imgNode.src
+        PopWrap.querySelector('img').alt=imgNode.alt
+    }
+})
 
 PopWrap.addEventListener('click', function(e){
     if(e.target.tagName!=="IMG"){
