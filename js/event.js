@@ -34,8 +34,7 @@ let Menu=document.querySelector('header .menu'),
     MoblieMenuBtn=document.querySelector('.open-menu');
 
 window.addEventListener('load', function(){
-    let Width=window.innerWidth;
-    if(Width<1024) {
+    if(window.innerWidth<1024) {
         MoblieMenuBtn.addEventListener('click', function(){
             header.classList.add('on')
             Menu.style.display="block";
@@ -50,8 +49,7 @@ window.addEventListener('load', function(){
 })
 
 window.addEventListener('resize', function(){
-    let Width=window.innerWidth;
-    if(Width<1024) {
+    if(window.innerWidth<1024) {
         MoblieMenuBtn.addEventListener('click', function(){
             header.classList.add('on')
             Menu.style.display="block";
