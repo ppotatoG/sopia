@@ -1,6 +1,6 @@
-# sopia clone coding
+# SOPIA Clone Coding
 
-[SOPIA Clone Coding View](https://ppotatog.github.io/sopia/view/)
+[View](https://ppotatog.github.io/sopia/view/)
 
 <br/>
 
