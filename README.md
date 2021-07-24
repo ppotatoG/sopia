@@ -11,3 +11,23 @@
 [SOPIA Page](https://sopia-bot.github.io/)
 
 [SOPIA github](https://github.com/sopia-bot/SOPIA)
+
+--- 
+
+## Refactoring
+<details>
+<summary>210724</summary>
+
+1. trim
+    - let => const로 변경
+    - 들여쓰기 통일
+    - 세미콜론 통일
+
+</details>
+
+<details>
+<summary>210722</summary>
+
+1. 비어있는 페이지, 레이아웃 추가
+2. index.html 위치 변경 (view/index.html => index.html)
+</details>
