@@ -16,6 +16,13 @@
 
 ## Refactoring
 <details>
+<summary>210725</summary>
+
+1. css trim(추후 scss 로 변경 예정)
+
+</details>
+
+<details>
 <summary>210724</summary>
 
 1. trim
