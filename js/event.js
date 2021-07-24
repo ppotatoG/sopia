@@ -1,5 +1,5 @@
 const once = {once: true};
-const Wrap=document.querySelector("#wrap");
+const Wrap = document.querySelector("#wrap");
 
 window.onscroll = function() {headerFunction()};
 
@@ -14,23 +14,22 @@ function headerFunction() {
     }
 }
 
-const DepthBtn=document.querySelectorAll('header button:not(.menu-hide)');
-for(let i=0; i<DepthBtn.length; i++){
-    DepthBtn[i].addEventListener('click', function(){
-        if(this.classList=='on'){
+const depthBtns = document.querySelectorAll('header button:not(.menu-hide)');
+
+depthBtns.forEach((depthBtn) => {
+    depthBtn.addEventListener('click', function(){     
+        if(this.classList == 'on') {
             this.classList.remove('on');
-        }else if(this.classList!=='on'){
-            for(let j=0; j<DepthBtn.length; j++){
-                DepthBtn[j].classList.remove('on');
-            }
-            this.classList.add('on');
+        }else {
+            for(item of depthBtns) item.classList.remove('on')
+            this.classList.add('on')
         }
     })
-}
+})
 
+//slideToggle
 const Menu=document.querySelector('header .menu');
 const MoblieMenuBtn=document.querySelector('.open-menu');
-
 
 window.addEventListener('load', function(){
     if(window.innerWidth<1024) {
@@ -62,7 +61,7 @@ window.addEventListener('resize', function(){
     }
 })
 
-
+// openPopup
 const Figure = document.querySelectorAll('figure:not(.disable)');
 const PopWrap=document.querySelector('.popup');
 
@@ -75,20 +74,23 @@ Wrap.addEventListener('click', function(event){
     }
 })
 
+// closePopup
 PopWrap.addEventListener('click', function(e){
     if(e.target.tagName!=="IMG"){
         this.classList.remove('on');
     }
 })
 
-let NoteList=document.querySelectorAll('.note-box h3');
+const noteLists = document.querySelectorAll('.note-box h3');
 
-for(let i=0; i<NoteList.length; i++){
-    NoteList[i].addEventListener('click', function(){
+noteLists.forEach((noteList) => {
+    noteList.addEventListener('click', function(){
         this.classList.toggle('on');
     })
-}
+})
 
+
+//slideToggle
 const viewBtn=document.querySelectorAll('.view span');
 const NoteBox=document.querySelector('.note-box');
 

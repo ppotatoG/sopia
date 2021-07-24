@@ -22,6 +22,7 @@
     - let => const로 변경
     - 들여쓰기 통일
     - 세미콜론 통일
+2. for => forEach, for of 로 변경
 
 </details>
 
