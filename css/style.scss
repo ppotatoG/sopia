@@ -2,7 +2,7 @@
 html {
 	font-size: 10px;
 }
-a {
+a, button, figcaption, h1, h2, h3, h4, h5, h6, label, li, p, span {
 	color: #323232;
 	font-size: 1.6rem;
 	font-weight: 300;
@@ -10,89 +10,7 @@ a {
 	letter-spacing: -0.05rem;
 }
 button {
-	color: #323232;
-	font-size: 1.6rem;
-	font-weight: 300;
-	font-family: "Noto Sans KR", Roboto, sans-serif;
-	letter-spacing: -0.05rem;
-	cursor: pointer;
-}
-figcaption {
-	color: #323232;
-	font-size: 1.6rem;
-	font-weight: 300;
-	font-family: "Noto Sans KR", Roboto, sans-serif;
-	letter-spacing: -0.05rem;
-}
-h1 {
-	color: #323232;
-	font-size: 1.6rem;
-	font-weight: 300;
-	font-family: "Noto Sans KR", Roboto, sans-serif;
-	letter-spacing: -0.05rem;
-}
-h2 {
-	color: #323232;
-	font-size: 1.6rem;
-	font-weight: 300;
-	font-family: "Noto Sans KR", Roboto, sans-serif;
-	letter-spacing: -0.05rem;
-}
-h3 {
-	color: #323232;
-	font-size: 1.6rem;
-	font-weight: 300;
-	font-family: "Noto Sans KR", Roboto, sans-serif;
-	letter-spacing: -0.05rem;
-}
-h4 {
-	color: #323232;
-	font-size: 1.6rem;
-	font-weight: 300;
-	font-family: "Noto Sans KR", Roboto, sans-serif;
-	letter-spacing: -0.05rem;
-}
-h5 {
-	color: #323232;
-	font-size: 1.6rem;
-	font-weight: 300;
-	font-family: "Noto Sans KR", Roboto, sans-serif;
-	letter-spacing: -0.05rem;
-}
-h6 {
-	color: #323232;
-	font-size: 1.6rem;
-	font-weight: 300;
-	font-family: "Noto Sans KR", Roboto, sans-serif;
-	letter-spacing: -0.05rem;
-}
-label {
-	color: #323232;
-	font-size: 1.6rem;
-	font-weight: 300;
-	font-family: "Noto Sans KR", Roboto, sans-serif;
-	letter-spacing: -0.05rem;
-}
-li {
-	color: #323232;
-	font-size: 1.6rem;
-	font-weight: 300;
-	font-family: "Noto Sans KR", Roboto, sans-serif;
-	letter-spacing: -0.05rem;
-}
-p {
-	color: #323232;
-	font-size: 1.6rem;
-	font-weight: 300;
-	font-family: "Noto Sans KR", Roboto, sans-serif;
-	letter-spacing: -0.05rem;
-}
-span {
-	color: #323232;
-	font-size: 1.6rem;
-	font-weight: 300;
-	font-family: "Noto Sans KR", Roboto, sans-serif;
-	letter-spacing: -0.05rem;
+    cursor: pointer;
 }
 #wrap {
 	figure {
@@ -113,27 +31,28 @@ span {
 figure {
 	&:not(.disable) {
 		img {
-			// box-shadow: 0 1px 16px rgb(0 0 0 / 0.2);
+			box-shadow: 0 1px 16px #ccc;
 			border-radius: 0.5rem;
 			overflow: hidden;
-			// &:hover {
-			// 	box-shadow: 0 1px 16px rgb(0 0 0 / 0.8);
-			// }
+			&:hover {
+				box-shadow: 0 1px 16px #ccc;
+			}
 		}
 	}
+    &.disable {
+        img {
+            border-radius: 0;
+            box-shadow: none;
+        }
+        &:hover {
+            img {
+                border-radius: 0;
+                box-shadow: none;
+            }
+        }
+    }
 }
-figure.disable {
-	img {
-		border-radius: 0;
-		box-shadow: none;
-	}
-	&:hover {
-		img {
-			border-radius: 0;
-			box-shadow: none;
-		}
-	}
-}
+
 .logo {
 	font-size: 2.4rem;
 	font-weight: 700;
@@ -895,30 +814,21 @@ footer {
 		}
 	}
 	header.fix {
-		+ {
-			.contents {
-				padding: 60px 0;
-				.docs-header {
-					width: calc(100% - 320px);
-					position: fixed;
-					top: 0;
-					left: 320px;
-					z-index: 1;
-				}
-			}
-		}
-	}
-	.header.fix {
-		+ {
-			.contents {
-				padding-top: 60px;
-			}
-			.contents.note {
-				padding-top: 0;
-			}
-			.contents.main-page {
-				padding-top: 0;
-			}
+		+.contents {
+            padding: 60px 0;
+            .docs-header {
+                width: calc(100% - 320px);
+                position: fixed;
+                top: 0;
+                left: 320px;
+                z-index: 1;
+            }
+            &.note {
+                padding-top: 0;
+            }
+            &.main-page {
+                padding-top: 0;
+            }
 		}
 	}
 	#wrap {
