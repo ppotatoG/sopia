@@ -15,6 +15,25 @@
 --- 
 
 ## Refactoring
+
+<details>
+<summary>210726</summary>
+
+1. css to scss
+
+</details>
+
+<details>
+<summary>210724</summary>
+
+1. trim
+    - let => const로 변경
+    - 들여쓰기 통일
+    - 세미콜론 통일
+2. for => forEach, for of 로 변경
+
+</details>
+
 <details>
 <summary>210725</summary>
 
