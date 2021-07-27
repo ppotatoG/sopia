@@ -27,17 +27,29 @@ depthBtns.forEach((depthBtn) => {
     })
 })
 
-//slideToggle
-const Menu=document.querySelector('header .menu');
-const MoblieMenuBtn=document.querySelector('.open-menu');
+// mobile header slideToggle
+if(window.innerWidth < 1024){
+    $('.menu_open').on('click', function(){
+        $('.depth_wrap').slideDown( 300, 'swing', function(){
+            $('.menu li').fadeOut();
+            $('.menu_hide').fadeIn();
+        });
+    })
 
-$('.open-menu').on('click', function(){
-    $('.depth_wrap').slideToggle();
-})
-$('.depth_wrap .gnb >li').on('click', function(){
-    $('.depth').slideUp();
-    $(this).find($('.depth')).slideDown();
-})
+    $('.menu_hide button').on('click', function(){
+        $('.depth_wrap').slideUp( 300, 'swing', function(){
+            $('.menu li').fadeIn();
+            $('.menu_hide').fadeOut();
+        });
+    })
+    
+    $('.depth_wrap .gnb >li').on('click', function(){
+        $('.depth').slideUp();
+        $(this).find($('.depth')).slideDown();
+    })
+}
+
+
 
 // openPopup
 const Figure = document.querySelectorAll('figure:not(.disable)');
