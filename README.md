@@ -15,11 +15,21 @@
 --- 
 
 ## Refactoring
+<details>
+<summary>210727</summary>
+
+vanilla => jquery(header slideToggle)
+
+- inex.html 구조 변경, jquery 추가
+- scss 변경
+- vanilla => jquery
+
+</details>
 
 <details>
 <summary>210726</summary>
 
-1. css to scss
+css to scss
 
 </details>
 
@@ -37,7 +47,7 @@
 <details>
 <summary>210725</summary>
 
-1. css trim(추후 scss 로 변경 예정)
+css trim(추후 scss 로 변경 예정)
 
 </details>
 
