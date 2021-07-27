@@ -31,34 +31,12 @@ depthBtns.forEach((depthBtn) => {
 const Menu=document.querySelector('header .menu');
 const MoblieMenuBtn=document.querySelector('.open-menu');
 
-window.addEventListener('load', function(){
-    if(window.innerWidth<1024) {
-        MoblieMenuBtn.addEventListener('click', function(){
-            header.classList.add('on')
-            Menu.style.display="block";
-            Menu.style.marginTop="-8rem";
-            Menu.style.transition="margin "+"1s";
-            setTimeout(function(){
-                Menu.style.marginTop="0";
-                Menu.style.visibility="visible";
-            }, 90);  
-        }, once)
-    }
+$('.open-menu').on('click', function(){
+    $('.depth_wrap').slideToggle();
 })
-
-window.addEventListener('resize', function(){
-    if(window.innerWidth<1024) {
-        MoblieMenuBtn.addEventListener('click', function(){
-            header.classList.add('on')
-            Menu.style.display="block";
-            Menu.style.marginTop="-8rem";
-            Menu.style.transition="margin "+"1s";
-            setTimeout(function(){
-                Menu.style.marginTop="0";
-                Menu.style.visibility="visible";
-            }, 90);
-        })
-    }
+$('.depth_wrap .gnb >li').on('click', function(){
+    $('.depth').slideUp();
+    $(this).find($('.depth')).slideDown();
 })
 
 // openPopup

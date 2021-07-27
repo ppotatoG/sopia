@@ -60,7 +60,7 @@ figure {
 }
 header {
 	width: 100%;
-	height: auto;
+	height: 5rem;
 	background: #fff;
 	box-sizing: border-box;
 	padding: 1rem 2rem;
@@ -81,64 +81,7 @@ header {
 			}
 		}
 	}
-	.gnb {
-		display: none;
-		margin-left: 2rem;
-		>li {
-			min-height: 50px;
-		}
-		button {
-			position: relative;
-			padding: 1rem;
-			width: 100%;
-			text-align: left;
-			min-height: 50px;
-			font-size: 1.6rem;
-			&::after {
-				content: "";
-				display: block;
-				width: 8px;
-				height: 8px;
-				border: 2px #df89b5 solid;
-				transform: rotate(45deg);
-				position: absolute;
-				top: 22px;
-				right: 20px;
-				border-right: none;
-				border-bottom: none;
-				transition: transform 0.2s;
-			}
-			&::before {
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				display: block;
-				content: "";
-				opacity: 0;
-				transition: opacity 0.2s;
-				background: linear-gradient(to left, #df89b5 0, #bfd9fe 100%);
-			}
-		}
-		button.on {
-			&::after {
-				transform: rotate(225deg);
-				top: 18px;
-			}
-			+ {
-				.depth {
-					height: auto;
-					padding: 1rem;
-					padding-top: 0;
-					margin: 0;
-					>* {
-						visibility: visible;
-					}
-				}
-			}
-		}
-	}
+
 	.menu-hide {
 		position: absolute;
 		top: 2rem;
@@ -161,130 +104,88 @@ header {
 			}
 		}
 	}
-	.depth {
-		padding: 0;
-		height: 0;
-		margin-top: -2rem;
-		transition: margin 0.2s;
-		>* {
-			visibility: hidden;
-		}
-		a {
-			padding: 1rem;
-			font-size: 1.4rem;
-			&::before {
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				display: block;
-				content: "";
-				opacity: 0;
-				transition: opacity 0.2s;
-				background: linear-gradient(to left, #df89b5 0, #bfd9fe 100%);
-			}
-		}
-	}
 	.page-select {
 		color: #7089ac;
 		font-weight: 600;
-	}
-	ul {
-		li {
-			.page-select {
-				&::before {
-					display: none;
-				}
-			}
-		}
-	}
-}
-header.on {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 1;
-	box-shadow: none;
-	display: block;
-	height: 100vh;
-	min-height: 570px;
-	.menu {
-		display: block;
-		visibility: hidden;
-		margin-top: -5rem;
-		display: block;
-		>li {
-			&:last-child {
-				margin-left: 0;
-			}
-			>a {
+	} 
+	.depth_wrap{
+		position:absolute;
+		top:5rem;
+		left: 0;
+		padding: 1rem 2rem;
+		background-color: #fff;
+		width: 100%;
+		display: none;
+		box-sizing: border-box;
+		z-index: 10;
+		min-height: 100vh;
+		overflow-y: scroll;
+		& >li {
+			& >a{
 				font-size: 1.8rem;
 				font-weight: 400;
 				padding: 1rem;
 				margin-left: 1rem;
 			}
-		}
-	}
-	.gnb {
-		display: block;
-		button {
-			&:hover {
-				&::before {
-					opacity: 0.2;
+			.gnb {
+				margin-left: 2rem;
+				button, a{
+					position: relative;
+					padding: 1rem;
+					width: 100%;
+					text-align: left;
+					min-height: 50px;
+					font-size: 1.6rem;
+					&::before {
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						display: block;
+						content: "";
+						opacity: 0;
+						transition: opacity 0.2s;
+						background: linear-gradient(to left, #df89b5 0, #bfd9fe 100%);
+					}
+					&:hover::before{
+						opacity: .2;
+					}
 				}
-			}
-			&:active {
-				&::before {
-					opacity: 0.2;
+				button {
+					&::after {
+						content: "";
+						display: block;
+						width: 8px;
+						height: 8px;
+						border: 2px #df89b5 solid;
+						-webkit-transform: rotate(45deg);
+						transform: rotate(45deg);
+						position: absolute;
+						top: 22px;
+						right: 20px;
+						border-right: none;
+						border-bottom: none;
+						transition: transform 0.2s;
+					}
+					&.on::after {
+						transform: rotate(225deg);
+    					top: 18px;
+					}
 				}
-			}
-		}
-	}
-	.depth {
-		a {
-			&:hover {
-				&::before {
-					opacity: 0.2;
-				}
-			}
-			&:active {
-				&::before {
-					opacity: 0.2;
-				}
-			}
-		}
-	}
-	.menu-hide {
-		display: block;
-	}
-}
-.menu {
-	>li {
-		>a {
-			&::before {
-				width: 100%;
-				height: 100%;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				display: block;
-				content: "";
-				opacity: 0;
-				transition: opacity 0.2s;
-				background: linear-gradient(to left, #df89b5 0, #bfd9fe 100%);
-			}
-			&:hover {
-				&::before {
-					opacity: 0.2;
-				}
-			}
-			&:active {
-				&::before {
-					opacity: 0.2;
-				}
+				.depth {
+					padding: 1rem;
+					padding-top: 0;
+					display: none;
+					a{
+						min-height: auto;
+						width: auto;
+					}
+
+				}				
 			}
 		}
+	
 	}
 }
 header.fix {
