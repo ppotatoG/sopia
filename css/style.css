@@ -89,15 +89,19 @@ header .menu {
   padding-top: 1rem;
 }
 
-header .menu > li:last-child {
+header .menu li {
   margin-left: 2rem;
 }
 
-header .menu > li > a {
+header .menu li a {
   padding: 0.5rem;
 }
 
-header .menu-hide {
+header .menu li.menu_hide {
+  display: none;
+}
+
+header .menu_hide {
   position: absolute;
   top: 2rem;
   right: 2rem;
@@ -106,7 +110,7 @@ header .menu-hide {
   height: 2rem;
 }
 
-header .menu-hide span {
+header .menu_hide span {
   position: absolute;
   top: 10px;
   right: -2px;
@@ -115,12 +119,12 @@ header .menu-hide span {
   background: #323232;
 }
 
-header .menu-hide span:first-child {
+header .menu_hide span:first-child {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-header .menu-hide span:last-child {
+header .menu_hide span:last-child {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
@@ -134,14 +138,13 @@ header .depth_wrap {
   position: absolute;
   top: 5rem;
   left: 0;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 3rem;
   background-color: #fff;
   width: 100%;
   display: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   z-index: 10;
-  min-height: 100vh;
   overflow-y: scroll;
 }
 

@@ -72,17 +72,18 @@ header {
 	.menu {
 		display: flex;
 		padding-top: 1rem;
-		>li {
-			&:last-child {
-				margin-left: 2rem;
-			}
-			>a {
+		li {
+			margin-left: 2rem;
+			a {
 				padding: 0.5rem;
+			}
+			&.menu_hide{
+				display: none;
 			}
 		}
 	}
 
-	.menu-hide {
+	.menu_hide {
 		position: absolute;
 		top: 2rem;
 		right: 2rem;
@@ -112,13 +113,12 @@ header {
 		position:absolute;
 		top:5rem;
 		left: 0;
-		padding: 1rem 2rem;
+		padding: 1rem 2rem 3rem;
 		background-color: #fff;
 		width: 100%;
 		display: none;
 		box-sizing: border-box;
 		z-index: 10;
-		min-height: 100vh;
 		overflow-y: scroll;
 		& >li {
 			& >a{
