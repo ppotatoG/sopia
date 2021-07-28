@@ -28,8 +28,12 @@ depthBtns.forEach((depthBtn) => {
 })
 // header depth slideToggle
 $('.depth_wrap .gnb >li').on('click', function(){
-    $('.depth').slideUp();
-    $(this).find($('.depth')).slideDown();
+    if($(this).find('.depth').css(('display')) == 'block') {
+        $(this).find($('.depth')).slideUp();
+    }else {
+        $('.depth').slideUp();
+        $(this).find($('.depth')).slideDown();
+    }
 })
 // mobile header
 if(window.innerWidth < 1024){
