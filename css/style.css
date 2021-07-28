@@ -145,7 +145,6 @@ header .depth_wrap {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   z-index: 10;
-  overflow-y: scroll;
 }
 
 header .depth_wrap > li > a {
@@ -770,13 +769,7 @@ footer ul li:first-child a {
     display: block;
   }
   header .menu {
-    display: block;
-  }
-  header .menu > li:last-child {
-    margin: 0;
-  }
-  header .menu > li > a {
-    padding: 1rem;
+    display: none;
   }
   header .gnb {
     display: block;
@@ -807,6 +800,11 @@ footer ul li:first-child a {
   header .depth a:active::before {
     width: 100%;
     opacity: 0.4;
+  }
+  header .depth_wrap {
+    display: block;
+    position: initial;
+    padding: 0;
   }
   .menu > li > a::before {
     -webkit-transition: width 0.2s;

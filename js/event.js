@@ -26,8 +26,12 @@ depthBtns.forEach((depthBtn) => {
         }
     })
 })
-
-// mobile header slideToggle
+// header depth slideToggle
+$('.depth_wrap .gnb >li').on('click', function(){
+    $('.depth').slideUp();
+    $(this).find($('.depth')).slideDown();
+})
+// mobile header
 if(window.innerWidth < 1024){
     $('.menu_open').on('click', function(){
         $('.depth_wrap').slideDown( 300, 'swing', function(){
@@ -41,11 +45,6 @@ if(window.innerWidth < 1024){
             $('.menu li').fadeIn();
             $('.menu_hide').fadeOut();
         });
-    })
-    
-    $('.depth_wrap .gnb >li').on('click', function(){
-        $('.depth').slideUp();
-        $(this).find($('.depth')).slideDown();
     })
 }
 

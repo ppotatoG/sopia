@@ -119,7 +119,6 @@ header {
 		display: none;
 		box-sizing: border-box;
 		z-index: 10;
-		overflow-y: scroll;
 		& >li {
 			& >a{
 				font-size: 1.8rem;
@@ -641,15 +640,7 @@ footer {
 		padding: 3rem;
 		display: block;
 		.menu {
-			display: block;
-			>li {
-				&:last-child {
-					margin: 0;
-				}
-				>a {
-					padding: 1rem;
-				}
-			}
+			display: none;
 		}
 		.gnb {
 			display: block;
@@ -692,6 +683,11 @@ footer {
 					}
 				}
 			}
+		}
+		.depth_wrap {
+			display: block;
+			position: initial;
+			padding: 0;
 		}
 	}
 	.menu {
