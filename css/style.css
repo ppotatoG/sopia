@@ -138,13 +138,31 @@ header .depth_wrap {
   position: absolute;
   top: 5rem;
   left: 0;
-  padding: 1rem 2rem 3rem;
+  padding: 1rem 2rem;
   background-color: #fff;
   width: 100%;
   display: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   z-index: 10;
+  height: calc(100vh - 5rem);
+  overflow-y: scroll;
+}
+
+header .depth_wrap::-webkit-scrollbar {
+  width: 12px;
+  background-color: transparent;
+}
+
+header .depth_wrap::-webkit-scrollbar-thumb {
+  background-color: #f8cfe4;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 4px solid transparent;
+}
+
+header .depth_wrap::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
 header .depth_wrap > li > a {
@@ -765,8 +783,13 @@ footer ul li:first-child a {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 3rem;
     display: block;
+    padding: 0;
+  }
+  header .logo {
+    height: 6rem;
+    line-height: 6rem;
+    padding-left: 2rem;
   }
   header .menu {
     display: none;
@@ -805,6 +828,16 @@ footer ul li:first-child a {
     display: block;
     position: initial;
     padding: 0;
+    height: auto;
+    max-height: calc(100vh - 6rem);
+    padding-bottom: 2rem;
+  }
+  header .depth_wrap::-webkit-scrollbar {
+    width: 12px;
+  }
+  header .depth_wrap::-webkit-scrollbar-thumb {
+    background-color: #f8cfe4;
+    border: 4px solid transparent;
   }
   .menu > li > a::before {
     -webkit-transition: width 0.2s;
