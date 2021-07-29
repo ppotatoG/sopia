@@ -1,12 +1,34 @@
 @charset "urf-8";
+
+@mixin center($w) {
+    width: $w;
+    margin: 0 auto;
+}
+
+@mixin flexCenter($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin show {
+	display: block;
+}
+
+@mixin hide {
+	display: none;
+}
+
 html {
 	font-size: 10px;
 }
 a, button, figcaption, h1, h2, h3, h4, h5, h6, label, li, p, span {
 	color: #323232;
-	font-size: 1.6rem;
-	font-weight: 300;
-	font-family: "Noto Sans KR", Roboto, sans-serif;
+	font: {
+		size: 1.6rem;
+		weight: 300;
+		family: "Noto Sans KR", Roboto, sans-serif;
+	}
 	letter-spacing: -0.05rem;
 }
 button {
@@ -23,19 +45,22 @@ button {
 			height: auto;
 			padding: 2rem;
 			border-top: 5px #b8c4d6 solid;
-			box-sizing: border-box;
-			box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+			box: {
+				sizing: border-box;
+				shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+			}
 		}
 	}
 }
 figure {
 	&:not(.disable) {
 		img {
-			box-shadow: 0 1px 16px #ccc;
+			box-shadow: 0 1px 16px rgb(233, 233, 233);
 			border-radius: 0.5rem;
 			overflow: hidden;
+			transition: box-shadow .2s;
 			&:hover {
-				box-shadow: 0 1px 16px #ccc;
+				box-shadow: 0 1px 16px rgb(182, 182, 182);
 			}
 		}
 	}
@@ -54,20 +79,22 @@ figure {
 }
 
 .logo {
-	font-size: 2.4rem;
-	font-weight: 700;
+	font: {
+		size: 2.4rem;
+		weight: 700;
+	}
 	color: #b8c4d6;
 }
 header {
 	width: 100%;
 	height: 5rem;
 	background: #fff;
-	box-sizing: border-box;
 	padding: 1rem 2rem;
-	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	box: {
+		sizing: border-box;
+		shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+	}
+	@include flexCenter(center, center);
 	position: relative;
 	.menu {
 		display: flex;
@@ -78,7 +105,7 @@ header {
 				padding: 0.5rem;
 			}
 			&.menu_hide{
-				display: none;
+				@include hide;
 			}
 		}
 	}
@@ -87,7 +114,7 @@ header {
 		position: absolute;
 		top: 2rem;
 		right: 2rem;
-		display: none;
+		@include hide;
 		width: 2rem;
 		height: 2rem;
 		span {
@@ -126,18 +153,22 @@ header {
 			background-color: transparent;
 		}
 		&::-webkit-scrollbar-thumb {
-			background-color: #f8cfe4 ;
 			border-radius: 10px;
-			background-clip: padding-box;
 			border: 4px solid transparent;
+			background: {
+				clip: padding-box;
+				color: #f8cfe4 ;
+			}
 		}
 		&::-webkit-scrollbar-track {
 			background-color: transparent;
 		}
 		& >li {
 			& >a{
-				font-size: 1.8rem;
-				font-weight: 400;
+				font: {
+					size: 1.8rem;
+					weight: 400;
+				}
 				padding: 1rem;
 				margin-left: 1rem;
 			}
@@ -173,13 +204,14 @@ header {
 						width: 8px;
 						height: 8px;
 						border: 2px #df89b5 solid;
-						-webkit-transform: rotate(45deg);
 						transform: rotate(45deg);
 						position: absolute;
 						top: 22px;
 						right: 20px;
-						border-right: none;
-						border-bottom: none;
+						border: {
+							right: none;
+							bottom: none;
+						}						
 						transition: transform 0.2s;
 					}
 					&.on::after {
@@ -190,7 +222,7 @@ header {
 				.depth {
 					padding: 1rem;
 					padding-top: 0;
-					display: none;
+					@include hide;
 					a{
 						min-height: auto;
 						width: auto;
@@ -216,8 +248,7 @@ header.fix {
 	}
 	figure {
 		max-width: 600px;
-		width: 80%;
-		margin: 0 auto;
+		@include center(80%);
 		img {
 			width: 100%;
 			height: auto;
@@ -245,9 +276,11 @@ section {
 .main {
 	h2 {
 		color: #bfd9fe;
-		font-size: 4rem;
 		text-align: center;
-		font-weight: 700;
+		font: {
+			weight: 700;
+			size: 4rem;
+		}
 		margin: 10px 0;
 	}
 	ul {
@@ -270,13 +303,11 @@ section {
 	}
 	div {
 		div {
-			width: 100%;
 			max-width: 500px;
 			height: auto;
-			margin: 60px auto 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			@include center(100%);
+			margin-top: 60px;
+			@include flexCenter(center, center);
 		}
 	}
 	span.box {
@@ -307,8 +338,7 @@ section {
 		>div {
 			display: flex;
 			flex-direction: column;
-			width: 90%;
-			margin: 0 auto;
+			@include center(90%);
 		}
 		&:nth-child(even) {
 			>div {
@@ -330,9 +360,13 @@ section.community {
 	width: 100%;
 	height: 100%;
 	padding: 0;
-	>div {
-		background: url(../images/kakao.4b5a4af8.gif) no-repeat center center;
-		background-size: contain;
+	& >div {
+		background: {
+			image: url(../images/kakao.4b5a4af8.gif);
+			repeat: no-repeat;
+			position: center center;
+			size: contain;
+		}
 		width: 100%;
 		height: 100%;
 	}
@@ -346,8 +380,10 @@ section.community {
 			color: #fff;
 		}
 		p.header {
-			font-size: 3rem;
-			font-weight: 500;
+			font: {
+				size: 3rem;
+				weight: 500;
+			}
 			margin: 0;
 		}
 		button {
@@ -380,15 +416,12 @@ section.anydesk {
 	top: 0;
 	left: 0;
 	background: rgba(0, 0, 0, 0.4);
-	display: none;
-	justify-content: center;
-	align-items: center;
+	@include flexCenter(center, center);
+	@include hide;
 	figure {
 		width: 90%;
 		width: 80%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include flexCenter(center, center);
 		z-index: 2;
 		img {
 			width: 100%;
@@ -408,19 +441,22 @@ footer {
 	p {
 		text-align: center;
 		color: #fff;
-		font-size: 1.6rem;
-		font-weight: 400;
+		font: {
+			size: 1.6rem;
+			weight: 400;
+		}
 	}
 	ul {
-		display: flex;
-		justify-content: center;
+		@include flexCenter(center, center);
 		margin-top: 3rem;
 		li {
 			a {
 				text-align: center;
 				color: #fff;
-				font-size: 1.4rem;
-				font-weight: 300;
+				font: {
+					size: 1.4rem;
+					weight: 300;
+				}
 			}
 			&:first-child {
 				a {
@@ -430,171 +466,123 @@ footer {
 		}
 	}
 }
-.docs-wrap {
-	>* {
-		margin-top: 4rem;
-	}
-	> &:first-child {
-        margin-top: 0;
-	}
-	p {
-		text-align: left;
-	}
-}
-.docs-header {
-	>div {
-		position: relative;
-		box-shadow: 0 2px 2px #eee;
-		background: #fff;
-		height: 12rem;
-	}
-	h2 {
-		font-size: 2rem;
-		font-weight: 500;
-		background: #b8c4d6;
-		padding: 1rem 2rem;
-		color: #fff;
-		position: absolute;
-		top: 2rem;
-		left: 10%;
-		width: 80%;
-		box-sizing: border-box;
-		+ {
-			p {
-				position: absolute;
-				top: 8rem;
-				left: 10%;
-				margin: 0;
-			}
+.docs {
+	&-wrap {
+		& >* {
+			margin-top: 4rem;
 		}
-	}
-}
-.docs-box {
-	width: 80%;
-	margin: 0 auto;
-	padding: 5rem 0;
-	>* {
-		margin-top: 4rem;
-	}
-	&:first-child {
-        margin-top: 0;
-	}
-	.list-box {
-		border-bottom: 1px solid #eee;
-		margin-top: 0;
-		padding: 2rem;
-		&:last-child {
-			border-bottom: none;
-		}
-		&:first-child {
-            margin-top: 0;
-        }
-	}
-	h3 {
-		margin: 2rem 0;
-		font-size: 2.4rem;
-		font-weight: 500;
-	}
-	li {
-		margin: 2rem 0;
-	}
-	p {
-		margin: 2rem 0;
-	}
-	figure {
-		width: 80%;
-		margin: 2rem auto 4rem;
-	}
-	figcaption {
-		margin: 2rem auto;
-		text-align: center;
-		font-size: 1.6rem;
-	}
-	.emphasis01 {
-		display: inline-block;
-		background: #e8f1ff;
-		font-size: 1.4rem;
-		color: #df89b5;
-		padding: 0.5rem;
-	}
-	.emphasis02 {
-		display: inline-block;
-		background: #fff3f9;
-		font-size: 1.4rem;
-		color: #86a4d4;
-		padding: 0.5rem;
-	}
-	.link {
-		color: #008b8b;
-		display: inline-block;
-	}
-	.important {
-		color: #b30000;
-		font-size: 1rem;
-	}
-	.badge {
-		display: inline-block;
-		padding: 0.5rem 1rem;
-		border-radius: 1rem;
-		font-weight: 600;
-		border: 1px solid #008b8b;
-		color: #008b8b;
-		font-size: 1.4rem;
-	}
-}
-.note-wrap {
-	margin-top: 4rem;
-	.view {
-		display: none;
-	}
-}
-.note-box {
-	display: flex;
-	flex-direction: column;
-	width: 80%;
-	margin: 0 auto;
-	.box {
-		margin-top: 3rem;
-		height: auto;
-		min-height: 3rem;
 		&:first-child {
 			margin-top: 0;
 		}
+		p {
+			text-align: left;
+		}
 	}
-	h3 {
-		display: inline-block;
-		font-size: 2rem;
-		font-weight: 500;
-		position: relative;
-	}
-	ul {
-		visibility: hidden;
-		height: 0;
-		margin-top: -1rem;
-		transition: margin 0.2s;
-	}
-	h3.on {
-		+ {
-			ul {
-				visibility: visible;
-				height: auto;
-				margin: 0;
+	&-header {
+		>div {
+			position: relative;
+			box-shadow: 0 2px 2px #eee;
+			background: #fff;
+			height: 12rem;
+		}
+		h2 {
+			font: {
+				size: 2rem;
+				weight: 500;
+			}
+			background: #b8c4d6;
+			padding: 1rem 2rem;
+			color: #fff;
+			position: absolute;
+			top: 2rem;
+			left: 10%;
+			width: 80%;
+			box-sizing: border-box;
+			+ {
+				p {
+					position: absolute;
+					top: 8rem;
+					left: 10%;
+					margin: 0;
+				}
 			}
 		}
 	}
-	li {
-		font-size: 1.4rem;
-		margin-top: 2rem;
-		padding-left: 2rem;
-		display: flex;
-		align-items: center;
-		&::before {
-			display: block;
-			content: "\f2d1";
-			color: #323232;
-			font-family: "Font Awesome 5 Free";
-			margin-top: -8px;
-			margin-right: 1rem;
+	&-box {
+		width: 80%;
+		margin: 0 auto;
+		padding: 5rem 0;
+		>* {
+			margin-top: 4rem;
+		}
+		&:first-child {
+			margin-top: 0;
+		}
+		.list-box {
+			border-bottom: 1px solid #eee;
+			margin-top: 0;
+			padding: 2rem;
+			&:last-child {
+				border-bottom: none;
+			}
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+		h3 {
+			margin: 2rem 0;
+			font: {
+				size: 2.4rem;
+				weight: 500;
+			}
+		}
+		li {
+			margin: 2rem 0;
+		}
+		p {
+			margin: 2rem 0;
+		}
+		figure {
+			width: 80%;
+			margin: 2rem auto 4rem;
+		}
+		figcaption {
+			margin: 2rem auto;
+			text-align: center;
+			font-size: 1.6rem;
+		}
+		.emphasis01 {
+			display: inline-block;
+			background: #e8f1ff;
+			font-size: 1.4rem;
+			color: #df89b5;
+			padding: 0.5rem;
+		}
+		.emphasis02 {
+			display: inline-block;
+			background: #fff3f9;
+			font-size: 1.4rem;
+			color: #86a4d4;
+			padding: 0.5rem;
+		}
+		.link {
+			color: #008b8b;
+			display: inline-block;
+		}
+		.important {
+			color: #b30000;
+			font-size: 1rem;
+		}
+		.badge {
+			display: inline-block;
+			padding: 0.5rem 1rem;
+			border-radius: 1rem;
+			color: #008b8b;
+			border: 1px solid #008b8b;
+			font: {
+				weight: 600;
+				size: 1.4rem;
+			}
 		}
 	}
 }
@@ -607,18 +595,71 @@ footer {
 		position: fixed;
 		right: 3rem;
 		bottom: 3rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		&:hover {
-			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-		}
-		&:active {
+		@include flexCenter(center, center);
+		&:hover, &:active {
 			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 		}
 		i {
 			font-size: 1.4rem;
 			color: #3f3f3f;
+		}
+	}
+	&-box {
+		display: flex;
+		flex-direction: column;
+		@include center(80%);
+		.box {
+			margin-top: 3rem;
+			height: auto;
+			min-height: 3rem;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+		h3 {
+			display: inline-block;
+			position: relative;
+			font: {
+				size: 2rem;
+				weight: 500;
+			}
+		}
+		ul {
+			visibility: hidden;
+			height: 0;
+			margin-top: -1rem;
+			transition: margin 0.2s;
+		}
+		h3.on {
+			+ {
+				ul {
+					visibility: visible;
+					height: auto;
+					margin: 0;
+				}
+			}
+		}
+		li {
+			font-size: 1.4rem;
+			margin-top: 2rem;
+			padding-left: 2rem;
+			@include flexCenter(center, center);
+			&::before {
+				display: block;
+				content: "\f2d1";
+				color: #323232;
+				font-family: "Font Awesome 5 Free";
+				margin: {
+					top: -8px;
+					right: 1rem;
+				}
+			}
+		}
+	}
+	&-wrap {
+		margin-top: 4rem;
+		.view {
+			@include hide;
 		}
 	}
 }
@@ -642,9 +683,6 @@ footer {
 	}
 }
 @media all and (min-width: 1024px) {
-	html {
-		font-size: 12px;
-	}
 	header {
 		width: 320px;
 		height: 100%;
@@ -652,18 +690,18 @@ footer {
 		position: fixed;
 		top: 0;
 		left: 0;
-		display: block;
 		padding: 0;
+		@include show;
 		.logo {
 			height: 6rem;
 			line-height: 6rem;
 			padding-left: 2rem;
 		}
 		.menu {
-			display: none;
+			@include hide;
 		}
 		.gnb {
-			display: block;
+			@include show;
 			button {
 				&::before {
 					transition: width 0.2s;
@@ -690,13 +728,7 @@ footer {
 					transition: width 0.2s;
 					width: 0;
 				}
-				&:hover {
-					&::before {
-						width: 100%;
-						opacity: 0.4;
-					}
-				}
-				&:active {
+				&:hover, &:active {
 					&::before {
 						width: 100%;
 						opacity: 0.4;
@@ -705,7 +737,7 @@ footer {
 			}
 		}
 		.depth_wrap {
-			display: block;
+			@include show;
 			position: initial;
 			padding: 0;
 			height: auto;
@@ -727,12 +759,7 @@ footer {
 					transition: width 0.2s;
 					width: 0;
 				}
-				&:hover {
-					&::before {
-						width: 100%;
-					}
-				}
-				&:active {
+				&:hover, &:active  {
 					&::before {
 						width: 100%;
 					}
@@ -750,10 +777,7 @@ footer {
                 left: 320px;
                 z-index: 1;
             }
-            &.note {
-                padding-top: 0;
-            }
-            &.main-page {
+            &.note, &.main-page{
                 padding-top: 0;
             }
 		}
@@ -774,8 +798,7 @@ footer {
 	}
 	.contents {
 		.docs-box {
-			width: 80%;
-			margin: 0 auto;
+			@include center(80%);
 			max-width: 1200px;
 			&:first-child {
 				* {
@@ -822,10 +845,10 @@ footer {
 	}
 	.note-wrap {
 		.go-btn {
-			display: none;
+			@include hide;
 		}
 		.view {
-			display: block;
+			@include show;
 			position: fixed;
 			top: 4rem;
 			right: 2rem;
@@ -833,16 +856,16 @@ footer {
 			div {
 				width: 12rem;
 				height: 2rem;
-				align-items: center;
-				justify-content: space-around;
 				position: absolute;
 				top: 0;
 				right: 0;
-				display: flex;
+				@include flexCenter(space-around, center);
 			}
 			span {
-				font-weight: 300;
-				font-size: 1.2rem;
+				font: {
+					weight: 300;
+					size: 1.2rem;
+				}
 			}
 			span.on {
 				font-weight: 500;
@@ -866,26 +889,18 @@ footer {
 	.flex-wrap {
 		>section {
 			>div {
+				height: 100%;
 				min-height: 90vh;
 				flex-direction: row-reverse;
-				align-items: center;
-				justify-content: space-around;
-				height: 100%;
+				@include flexCenter(space-around, center);
+				&:first-child {
+					margin: 0;
+					margin-left: 8rem;
+				}
 			}
 			&:nth-child(even) {
 				>div {
 					flex-direction: row;
-					&:first-child {
-                        margin: 0;
-                        margin-right: 8rem;
-                    }				}
-			}
-			&:nth-child(odd) {
-				>div {					
-                    &:first-child {
-                        margin: 0;
-                        margin-left: 8rem;
-                    }
 				}
 			}
 		}
