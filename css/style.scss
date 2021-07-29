@@ -94,8 +94,8 @@ header {
 		sizing: border-box;
 		shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
 	}
-	@include flexCenter(center, center);
 	position: relative;
+	@include flexCenter(space-between, center);
 	.menu {
 		display: flex;
 		padding-top: 1rem;
@@ -511,7 +511,6 @@ footer {
 	&-box {
 		width: 80%;
 		margin: 0 auto;
-		padding: 5rem 0;
 		>* {
 			margin-top: 4rem;
 		}
@@ -663,18 +662,6 @@ footer {
 		}
 	}
 }
-.ripple {
-	position: relative;
-	overflow: hidden;
-	cursor: pointer;
-	.animate {
-		width: 2px;
-		height: 2px;
-		position: absolute;
-		border-radius: 50%;
-		animation: materialRipple 0.4s linear;
-	}
-}
 @media all and (min-width: 767px) and (max-width: 1024px) {
 	.popup {
 		figure {
@@ -776,6 +763,7 @@ footer {
                 top: 0;
                 left: 320px;
                 z-index: 1;
+				margin-top: 0;
             }
             &.note, &.main-page{
                 padding-top: 0;

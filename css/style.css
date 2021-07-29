@@ -74,16 +74,16 @@ header {
           box-sizing: border-box;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
 }
 
 header .menu {
@@ -572,7 +572,6 @@ footer ul li:first-child a {
 .docs-box {
   width: 80%;
   margin: 0 auto;
-  padding: 5rem 0;
 }
 
 .docs-box > * {
@@ -762,21 +761,6 @@ footer ul li:first-child a {
   display: none;
 }
 
-.ripple {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.ripple .animate {
-  width: 2px;
-  height: 2px;
-  position: absolute;
-  border-radius: 50%;
-  -webkit-animation: materialRipple 0.4s linear;
-          animation: materialRipple 0.4s linear;
-}
-
 @media all and (min-width: 767px) and (max-width: 1024px) {
   .popup figure {
     width: 70%;
@@ -860,6 +844,7 @@ footer ul li:first-child a {
     top: 0;
     left: 320px;
     z-index: 1;
+    margin-top: 0;
   }
   header.fix + .contents.note, header.fix + .contents.main-page {
     padding-top: 0;
