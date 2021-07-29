@@ -642,7 +642,7 @@ footer {
 			font-size: 1.4rem;
 			margin-top: 2rem;
 			padding-left: 2rem;
-			@include flexCenter(center, center);
+			@include flexCenter(flex-start, center);
 			&::before {
 				display: block;
 				content: "\f2d1";
