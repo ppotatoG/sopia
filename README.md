@@ -16,6 +16,17 @@
 
 ## Refactoring
 <details>
+<summary>210729</summary>
+
+1. scss내에서 mixin, 변수 추가
+2. css to scss 하며 틀어진 부분 수정
+3. ripple 삭제
+4. header 변경(.html 24개 파일.. 모두 변경)
+
+</details>
+
+
+<details>
 <summary>210728</summary>
 
 1. slideToggle 닫히지 않는 오류 수정
