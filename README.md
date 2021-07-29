@@ -16,6 +16,15 @@
 
 ## Refactoring
 <details>
+<summary>210728</summary>
+
+1. slideToggle 닫히지 않는 오류 수정
+2. pc header 레이아웃 변경
+3. scrollbar style 
+
+</details>
+
+<details>
 <summary>210727</summary>
 
 vanilla => jquery(header slideToggle)
