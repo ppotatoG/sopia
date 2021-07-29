@@ -532,7 +532,7 @@ footer ul li:first-child a {
   margin-top: 4rem;
 }
 
-.docs-wrap:first-child {
+.docs-wrap *:first-child {
   margin-top: 0;
 }
 
