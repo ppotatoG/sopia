@@ -2,8 +2,6 @@
 
 [View](https://ppotatog.github.io/sopia/)
 
-<br/>
-
 ## 개발자 윤군
 
 [개발자 윤군](https://github.com/raravel)
